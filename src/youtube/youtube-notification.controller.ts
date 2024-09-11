@@ -14,8 +14,10 @@ export class YoutubeNotificationController {
   async handleNotification(
     @Req() req: Request,
     @Res() res: Response,
-  ): Promise<void> {
+  ): Promise<string> {
     this.logger.log('YouTube Notification received');
     console.log(req.body);
+
+    return 'Notification successfully received';
   }
 }
