@@ -1,5 +1,5 @@
-import { Controller, Logger, Post, Req, Res } from '@nestjs/common';
-import { Request, Response } from 'express';
+import { Controller, Logger, Post, Req } from '@nestjs/common';
+import { Request } from 'express';
 import { YoutubeNotificationService } from './youtube-notification.service';
 
 @Controller('youtube/notifications')
@@ -11,10 +11,7 @@ export class YoutubeNotificationController {
   ) {}
 
   @Post()
-  async handleNotification(
-    @Req() req: Request,
-    @Res() res: Response,
-  ): Promise<string> {
+  async handleNotification(@Req() req: Request): Promise<string> {
     this.logger.log('YouTube Notification received');
     console.log(req.body);
 
