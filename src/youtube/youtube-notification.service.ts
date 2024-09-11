@@ -17,6 +17,7 @@ export class YoutubeNotificationService {
     });
 
     this.setupListeners();
+    this.subscribe();
   }
 
   private setupListeners() {
@@ -34,6 +35,7 @@ export class YoutubeNotificationService {
     if (this.channelId) {
       this.notifier.subscribe(this.channelId);
       this.logger.log(`Subscribed to channel ID: ${this.channelId}`);
+      console.log(`Subscribed to channel ID: ${this.channelId}`);
     } else {
       this.logger.error('CHANNEL_ID not found in environment variables');
     }
