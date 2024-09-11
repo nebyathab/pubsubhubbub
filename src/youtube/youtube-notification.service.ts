@@ -33,7 +33,9 @@ export class YoutubeNotificationService {
 
   subscribe() {
     if (this.channelId) {
-      this.notifier.subscribe(this.channelId);
+      this.notifier.subscribe(this.channelId, {
+        lease_seconds: 86400 * 30,
+      });
       this.logger.log(`Subscribed to channel ID: ${this.channelId}`);
       console.log(`Subscribed to channel ID: ${this.channelId}`);
     } else {
