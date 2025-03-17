@@ -18,6 +18,7 @@ export class YoutubeNotificationService {
 
     this.setupListeners();
     this.subscribe();
+    
   }
 
   private setupListeners() {
